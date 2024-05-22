@@ -10,7 +10,8 @@ requirejs.config({
       for those cases.
 	*/
 	
-	baseUrl : FrankensteinConfig.frankensteinRoot,
+	baseUrl : "/frankenstein",
+	//baseUrl : "https://s3.glo.texas.gov/frankenstein",
 	paths : {
 		backbone            :	"lib/backbone-min"
 		,"backbone.radio"   :	"lib/backbone.radio.min"
@@ -48,10 +49,6 @@ requirejs.config({
 		
 		,masterDetail: "views/masterDetail"
 		,MasterDetailView: "views/masterDetail/view"
-		
-		,cfList: "views/cfList"
-		,CfListView: "views/cfList/view"
-		,CFListView: "views/cfList/view"
 		
 		,form: "views/form"
 		,FormView: "views/form/view"
@@ -125,18 +122,13 @@ function log(str) {
 var Marionette = null;
 FrankensteinConfig.theme = FrankensteinConfig.theme ? "." + FrankensteinConfig.theme : "";
 require([ "bootstrap" , "marionette" , "app" , "routes"
+			//,"https://s3.glo.texas.gov/uilib/js/script." + FrankensteinConfig.theme + ".min.js"
+			//,"css!https://s3.glo.texas.gov/uilib/css/styles" + FrankensteinConfig.theme + ".min" 
 			,"css!" + FrankensteinConfig.root + "../css/styles" + FrankensteinConfig.theme + ".min" 
 			,"css!" + FrankensteinConfig.root + "../css/style", 'jquery-ui'],
   function( b , m , App , MainSubApp ) {
 	 Marionette = m;
-	log("Starting Frankenstein App...");
-	$.fn.isInViewport = function() {
-		var elementTop = $(this).offset().top;
-		var elementBottom = elementTop + $(this).outerHeight();
-		var viewportTop = $(window).scrollTop();
-		var viewportBottom = viewportTop + $(window).height();
-		return elementBottom > viewportTop && elementTop < viewportBottom;
-	};
+	log("Starting ZION App...");
 	App.start();
 	
 });	
