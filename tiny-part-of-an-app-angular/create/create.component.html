@@ -1,0 +1,85 @@
+<div class="scene-form">
+  <form [formGroup]="sceneForm" (submit)="submit()">
+    <mat-card class="card">
+      <mat-card-title>Create Scene</mat-card-title>
+      <mat-card-content>
+        <mat-form-field>
+          <mat-label>Enter scene title</mat-label>
+          <input
+            matInput
+            placeholder="Scene title"
+            formControlName="title"
+            required
+          />
+          <mat-error *ngIf="title?.invalid">Title is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Enter scene description</mat-label>
+          <input
+            matInput
+            type="text"
+            placeholder="Scene description"
+            formControlName="description"
+            required
+          />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Template</mat-label>
+          <textarea
+            matInput
+            type="text"
+            formControlName="template"
+            placeholder="Enter scene template"
+            rows="40"
+          ></textarea>
+          <mat-error *ngIf="template?.invalid">Template is required</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Plug-In Settings</mat-label>
+          <textarea
+            matInput
+            type="text"
+            formControlName="cliSettings"
+            placeholder="Enter scene plug-in settings"
+            rows="40"
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Links Map</mat-label>
+          <textarea
+            matInput
+            type="text"
+            formControlName="linksMap"
+            placeholder="Enter scene links map"
+            rows="40"
+          ></textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Options Map</mat-label>
+          <textarea
+            matInput
+            type="text"
+            formControlName="optionsMap"
+            placeholder="Enter scene options map"
+            rows="40"
+          ></textarea>
+        </mat-form-field>
+        <mat-card-footer>
+          <div class="button-panel">
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="(submit)"
+              [disabled]="!sceneForm.valid"
+            >
+              Submit
+            </button>
+            <button mat-raised-button color="warn" (click)="cancel()">
+              Cancel
+            </button>
+          </div>
+        </mat-card-footer>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
