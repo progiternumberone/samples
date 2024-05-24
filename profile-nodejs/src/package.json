@@ -1,0 +1,22 @@
+{
+  "Name": "public-profile",
+  "version": "1.0.0",
+  "description": "Provide public profile persistence",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no tests currently specified\""
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "config": "3.3.7",
+    "express": "latest",
+    "winston": "latest"
+  },
+  "author": "Content Access",
+  "contributors": [
+    {
+      "name": "Jordan King"
+    }
+  ],
+  "license": "None"
+}
