@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ActiveUserContext from './ActiveUserContext';
 //import logo from './logo.svg';
+import "primereact/resources/themes/bootstrap4-light-blue/theme.css";
 import './App.css';
 import HomePage from './HomePage'; // Import HomePage
 import CustomerProofreaders from './views/customer/CustomerProofreaders'; // Import ViewPNC
